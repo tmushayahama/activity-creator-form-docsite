@@ -12,14 +12,14 @@ import { AcademyCourseService } from './course.service';
 
 const routes = [
     {
-        path: 'courses',
+        path: 'tutorials',
         component: FuseAcademyCoursesComponent,
         resolve: {
             academy: AcademyCoursesService
         }
     },
     {
-        path: 'courses/:courseId/:courseSlug',
+        path: 'tutorials/:courseId/:courseSlug',
         component: FuseAcademyCourseComponent,
         resolve: {
             academy: AcademyCourseService

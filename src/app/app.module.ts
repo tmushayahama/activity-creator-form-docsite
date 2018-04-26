@@ -20,8 +20,8 @@ import { AppStoreModule } from './store/store.module';
 const appRoutes: Routes = [
     {
         path: '',
-        loadChildren: './main/content/pages/pages.module#FusePagesModule'
-    },
+        loadChildren: './main/content/pages/pages.module#PagesModule'
+    }
 ];
 
 @NgModule({

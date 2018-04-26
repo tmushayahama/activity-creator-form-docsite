@@ -29,6 +29,6 @@ import { GettingStartedModule } from './getting-started/getting-started.module';
     ],
     declarations: []
 })
-export class FusePagesModule {
+export class PagesModule {
 
 }
