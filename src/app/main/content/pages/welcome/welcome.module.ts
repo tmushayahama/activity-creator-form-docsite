@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FuseSharedModule } from '@fuse/shared.module';
+import { SaeSharedModule } from '@core/modules/shared.module';
 import { WelcomeComponent } from './welcome.component';
+
 
 const routes = [
     {
         path: 'welcome',
         component: WelcomeComponent
-    }, {
-        path: '**',
-        redirectTo: 'welcome'
     }
 ];
 
@@ -20,7 +19,8 @@ const routes = [
     imports: [
         RouterModule.forChild(routes),
 
-        FuseSharedModule
+        FuseSharedModule,
+        SaeSharedModule
     ]
 })
 export class WelcomeModule {

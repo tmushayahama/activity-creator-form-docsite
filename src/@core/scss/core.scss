@@ -1,0 +1,112 @@
+//@import "../../core/scss/core";
+$sae-primary-color: #039be5;
+$sae-secondary-color: #995014;
+//$sae-secondary-color: #995014;
+@mixin deep-width($number) {
+  width: $number;
+  min-width: $number;
+  max-width: $number;
+}
+
+@mixin deep-height($number) {
+  height: $number;
+  min-height: $number;
+  max-height: $number;
+}
+
+h1 {
+  font-size: 34px;
+}
+
+.sae-truncate {
+  display: block;
+  margin: 0;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+textarea {
+  //resize: none;
+}
+
+.sae-container {
+  position: relative;
+  width: 800px;
+  .sae-full-w {
+    width: 100% !important;
+  }
+  /*
+    @include respond-to (sae-md) {
+     width: 80%;
+    }
+    @include respond-to (sae-sm) {
+     width: 100%;
+    }
+    (*/
+}
+
+.sae-arrow-container {
+  .mat-button {
+    padding: 0;
+  }
+  &.sae-up-arrow,
+  &.sae-down-arrow {
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    .mat-button {
+      height: 30px;
+      min-height: 30px;
+      max-height: 30px;
+      line-height: 30px;
+      width: 80px;
+      min-width: 80px;
+      max-width: 80px;
+    }
+  }
+  &.sae-left-arrow,
+  &.sae-right-arrow {
+    width: 40px;
+    min-width: 30px;
+    max-width: 30px;
+    .mat-button {
+      width: 30px;
+      min-width: 30px;
+      max-width: 30px;
+      height: 100px;
+      min-height: 100px;
+      max-height: 100px;
+    }
+  }
+  .mat-button {
+    background-color: $sae-secondary-color;
+    &:hover {
+      background-color: rgba($sae-secondary-color, 0.5) !important;
+    }
+    &.sae-disabled {
+      background-color: #CCC;
+      pointer-events: none;
+      opacity: 0.2;
+    }
+  }
+}
+
+.sae-card-activity-1 {
+  width: 100%; // margin-right: -88px;
+  //padding-right: 66px;
+  .sae-image {
+    width: 96px;
+    padding: 10px 8px;
+  }
+  .sae-info {
+    padding: 16px;
+    .sae-title {
+      font-size: 16px;
+    }
+    .sae-description {
+      font-size: 12px;
+    }
+  }
+}

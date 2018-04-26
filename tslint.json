@@ -112,13 +112,13 @@
         "directive-selector": [
             true,
             "attribute",
-            "fuse",
+            "sae",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "fuse",
+            "sae",
             "kebab-case"
         ],
         "use-input-property-decorator": true,

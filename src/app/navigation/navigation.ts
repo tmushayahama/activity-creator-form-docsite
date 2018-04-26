@@ -1,18 +1,23 @@
 export const navigation = [
     {
-        'id': 'introduction',
-        'title': 'Introduction',
-        'translate': 'NAV.CALENDAR',
+        'id': 'welcome',
+        'title': 'Welcome',
         'type': 'item',
         'icon': 'today',
-        'url': '/apps/calendar'
+        'url': '/welcome'
     }, {
-        'id': 'glance',
+        'id': 'at-a-glance',
         'title': 'At a Glance',
-        'translate': 'NAV.APPLICATIONS',
         'type': 'group',
         'icon': 'apps',
         'children': [
+            {
+                'id': 'getting-started',
+                'title': 'Getting Started',
+                'type': 'item',
+                'icon': 'today',
+                'url': '/getting-started'
+            },
             {
                 'id': 'dashboards',
                 'title': 'Dashboards',

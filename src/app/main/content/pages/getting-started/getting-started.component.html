@@ -1,0 +1,105 @@
+<div id="sae-getting-started" fxLayout="column" fusePerfectScrollbar>
+  <div class="header mat-accent-bg p-16 p-sm-24" fxLayout="column" fxLayoutAlign="center center">
+
+    <div class="hero-text mb-32">
+      <h1>Getting started</h1>
+      <h3>New to Activity Creator Form? Or to Noctua in general? Well, you came to the right place: read this material to quickly
+        get up and running</h3>
+    </div>
+
+  </div>
+  <div class="w-100-p">
+    <div class="" fxFlex>
+      <div class="content">
+        <h1>Getting started</h1>
+        <p>New to Activity Creator Form? Or to Noctua in general? Well, you came to the right place: read this material to quickly
+          get up and running.</p>
+        <h2>Activity Creator Form at a glance</h2>
+        <p>What to read next</p>
+        <p>&nbsp;</p>
+        <h2>What can you do with Activity Creator Form?</h2>
+        <p>Create an activity, add an activity to an existing model and view activities in a models</p>
+        <p>With Activity Creator Form, you can create, add and view activities right in your web browser&mdash;no special software
+          is required. Even better, multiple people can work at the same model, you can see people&rsquo;s changes as they
+          make them, and every change is saved automatically.</p>
+        <h2>1. Creating an activity and its properties</h2>
+        <p>To create new activities, launch a new browser tab with the Activity Creator Form</p>
+        <p>In general, fill in as many fields as possible in the form, by typing in the field, and then selecting from the autocomplete
+          suggestions by moving the mouse over your selection and clicking.</p>
+        <p>
+          <em>Tip: In the autocomplete, enter a space after a complete word, to narrow down the choices.</em>
+        </p>
+        <h3>Step 1. Create Model Metadata</h3>
+        <ol>
+          <li>
+            <strong>Enter a title for your model</strong>
+          </li>
+          <li>
+            <strong>Select a model "state"</strong>
+          </li>
+        </ol>
+        <p>By default, all models begin in a "Development" state.</p>
+        <p>When ready, models may be moved to a "Production" state for publication by selecting "Production" from the drop-down
+          list.
+        </p>
+        <ol>
+          <li>
+            <strong>Select an annotation group</strong>
+          </li>
+        </ol>
+        <p>Annotation groups are associated with curators in the users metadata file described above.</p>
+        <p>By default, the first group associated with your entry in the metadata file is the group listed in the form.</p>
+        <p>If you belong to multiple groups, you can select the appropriate group for your work from the drop-down list.</p>
+        <p>&nbsp;</p>
+        <h3>Step 2. Create Annotations using the Function Description Form</h3>
+        <p>
+          <strong>Enter gene product or macromolecular complex to be annotated</strong>
+        </p>
+        <p>By default, the form allows you to enter a single gene product. Start typing, choices will appear, and then select
+          the gene product.</p>
+        <p>&nbsp;</p>
+        <p>Tip:</p>
+        <p>You can type in the gene symbol, e.g. Wnt3a or the unique identifier or accession, e.g. UniProtKB:P56704. If necessary
+          to narrow down the choices, type a space after the symbol, and enter the three letter code for the species (first
+          letter from genus and two from species name, e.g. mmu for Mus musculus).&nbsp; Each entry in the autocomplete will
+          also show the associated unique database identifier or accession, so curators can confirm that they are selecting
+          the appropriate entity for annotation.</p>
+        <p>
+          <strong>&nbsp;Enter the molecular function, evidence, and reference</strong>
+        </p>
+        <p>These fields are required. If you fill in the first field of any line, you need to add evidence and a reference.</p>
+        <p>If the Molecular Function is known, enter the appropriate GO term, evidence code and reference.</p>
+        <p>If the Molecular Function is unknown, but you are also making a Biological Process annotation, enter "molecular_function"
+          and the same evidence and reference as the Biological Process annotation.</p>
+        <p>If the Molecular Function is unknown, and there is no evidence for what the Molecular Function might be, enter "molecular_function"
+          and the ND evidence code.</p>
+        <p>
+          <strong>Enter other fields (optional)</strong>
+        </p>
+        <p>For Molecular Function, the following "extensions" can optionally be added:</p>
+        <p>has_input(molecule): fill in the "has input" field, evidence, and reference.</p>
+        <p>happens_during(biological phase): fill in the "happens during" field, evidence, and reference.</p>
+        <p>In addition, curators can add annotations to:</p>
+        <p>Biological Process (the form assumes a part_of relation between the Molecular Function and Biological Process)</p>
+        <p>Additional BP part_of "extensions" can be made to provide contextual information to the BP term.</p>
+        <p>Cellular Component (the form assumes an occurs_in relation between the Molecular Function and Cellular Component)</p>
+        <p>Additional part_of "extensions" can be made to provide contextual information about cell and/or tissue type.</p>
+        <p>We recommend that you fill in as many fields as possible before creating the activity, as after it is created, you
+          will need to edit it from the graph canvas, which requires more steps to do.</p>
+        <h3>Step 3. Add the new activity to a model</h3>
+        <p>Press the CREATE button. A new activity will appear on the graph canvas (the main window).</p>
+        <p>&nbsp;</p>
+        <p>Tips:</p>
+        <ol>
+          <li>Each new activity will appear on the same part of the canvas, so if you add more than one activity you will need
+            to move them around on the canvas (by clicking and dragging) to see the ones underneath.</li>
+          <li>If the CREATE button is grayed-out, there is some information missing from the form that you still need to fill
+            in. You can press the "why is the save button disabled?" for a list of missing fields.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="sae-quick-panel-right">
+      geneontology
+    </div>
+  </div>
+</div>
