@@ -1,0 +1,9 @@
+@import "src/@fuse/scss/fuse";
+:host {
+  #welcome {
+    width: 100%;
+    overflow: auto;
+    background: url('/assets/images/backgrounds/dark-material-bg.jpg') no-repeat;
+    background-size: cover;
+  }
+}
