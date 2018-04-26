@@ -1,100 +1,168 @@
 <div id="academy-course" class="page-layout simple left-sidenav">
 
-    <mat-sidenav-container>
-
-        <!-- SIDENAV -->
-        <mat-sidenav class="sidenav" align="start" opened="true" mode="side"
-                     fuseMatSidenavHelper="academy-left-sidenav" mat-is-locked-open="gt-md">
-
-            <div class="sidenav-content" fusePerfectScrollbar>
-
-                <div class="steps">
-
-                    <div class="step"
-                         *ngFor="let step of course.steps; let i = index; let last = last; let first = first"
-                         (click)="gotoStep(i)"
-                         [ngClass]="{'current': currentStep === i, 'completed': currentStep > i, 'last': last, 'first': first}">
-                        <div class="index">
-                            <span>{{i + 1}}</span>
-                        </div>
-                        <div class="title">{{step.title}}</div>
-                    </div>
-
-                </div>
-
+  <mat-sidenav-container>
+    <mat-sidenav class="sidenav" align="start" opened="true" mode="side" fuseMatSidenavHelper="academy-left-sidenav" mat-is-locked-open="gt-md">
+      <div class="sidenav-content" fusePerfectScrollbar>
+        <div class="steps">
+          <div class="step" *ngFor="let step of course.steps; let i = index; let last = last; let first = first" (click)="gotoStep(i)"
+            [ngClass]="{'current': currentStepIndex === i, 'completed': currentStepIndex > i, 'last': last, 'first': first}">
+            <div class="index">
+              <span>{{i + 1}}</span>
             </div>
-
-        </mat-sidenav>
-        <!-- / SIDENAV -->
-
-        <!-- CENTER -->
-        <div class="center">
-
-            <!-- HEADER -->
-            <div class="header mat-accent-bg p-24" fxLayout="row" fxLayoutAlign="start center">
-
-                <button mat-button class="mat-icon-button mr-16 sidenav-toggle"
-                        fuseMatSidenavToggler="academy-left-sidenav" fxHide.gt-md>
-                    <mat-icon>menu</mat-icon>
-                </button>
-
-                <button mat-button class="mat-icon-button mr-16" [routerLink]="'/apps/academy/courses'">
-                    <mat-icon>arrow_back</mat-icon>
-                </button>
-
-                <div>
-                    <h2>{{course.title}}</h2>
-                </div>
-
-            </div>
-            <!-- / HEADER -->
-
-            <!-- CONTENT -->
-            <div id="course-content" class="content">
-
-                <ng-container *ngFor="let step of course.steps; let i = index;">
-
-                    <div class="course-step" fusePerfectScrollbar
-                         *ngIf="currentStep === i"
-                         [@slideIn]="animationDirection">
-
-                        <div id="course-step-content" class="course-step-content" [innerHTML]="step.content"></div>
-
-                    </div>
-
-                </ng-container>
-
-            </div>
-            <!-- / CONTENT -->
-
-            <div class="step-navigation">
-
-                <button mat-fab class="previous mat-accent white-fg"
-                        (click)="gotoPreviousStep()"
-                        [disabled]="currentStep === 0"
-                        [fxHide]="currentStep === 0">
-                    <mat-icon>chevron_left</mat-icon>
-                </button>
-
-                <button mat-fab class="next mat-accent white-fg"
-                        (click)="gotoNextStep()"
-                        [disabled]="currentStep === course.totalSteps - 1"
-                        [fxHide]="currentStep === course.totalSteps - 1">
-                    <mat-icon>chevron_right</mat-icon>
-                </button>
-
-                <button mat-fab class="done mat-green-600-bg"
-                        routerLink="/apps/academy/courses"
-                        [disabled]="currentStep !== course.totalSteps - 1"
-                        [fxShow]="currentStep === course.totalSteps - 1">
-                    <mat-icon>check</mat-icon>
-                </button>
-
-            </div>
-
+            <div class="title">{{step.title}}</div>
+          </div>
         </div>
-        <!-- / CENTER -->
+      </div>
+    </mat-sidenav>
+    <div class="center">
+      <div class="header mat-accent-bg p-24" fxLayout="row" fxLayoutAlign="start center">
+        <button mat-button class="mat-icon-button mr-16 sidenav-toggle" fuseMatSidenavToggler="academy-left-sidenav" fxHide.gt-md>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button mat-button class="mat-icon-button mr-16" [routerLink]="'/apps/academy/courses'">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div>
+          <h2>{{course.title}}</h2>
+        </div>
+      </div>
+      <div id="course-content" class="content">
+        <div class="course-step" fusePerfectScrollbar *ngIf="currentStepIndex === 0" [@slideIn]="animationDirection">
+          <div id="course-step-content" class="course-step-content">
 
-    </mat-sidenav-container>
+            <h2>Overview</h2>
+            <div class="sae-alert sae-alert-info">
+              Cholesterol transporter activity (GO:0017127) is enabled by ABCA1 Hsap (UniProtKB:O95477) An evidence of direct assay evidence
+              used in manual assertion (ECO:0000314)
+            </div>
 
+            <h3>
+              Results
+            </h3>
+            <div *ngIf="false">
+              <mat-tab-group class="sae-tab-group">
+                <mat-tab label="Activity Creator Form">
+                  <div class="sae-tab-content">
+                    <img [src]="course.images['acf-1'].url" class="sae-figure" />
+                  </div>
+                </mat-tab>
+                <mat-tab label="Graph Editor">
+                  <div class="sae-tab-content">
+                    <img [src]="course.images['graph-1'].url" class="sae-figure" />
+                  </div>
+                </mat-tab>
+                <mat-tab label="GPAD">
+                  <div class="sae-tab-content">
+                    <img [src]="course.images['gpad-1'].url" class="sae-figure" />
+                  </div>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+            <a (click)="gotoNextStep()">
+              See The Steps
+            </a>
+          </div>
+        </div>
+        <div class="course-step" fusePerfectScrollbar *ngIf="currentStepIndex === 1" [@slideIn]="animationDirection">
+          <div id="course-step-content" class="course-step-content">
+            <h2>Step 1. Create Model Metadata</h2>
+            <ol>
+              <li>
+                Enter
+                <strong>Basic Activity Model</strong> in the title filed title
+              </li>
+              <li>
+                Select
+                <strong>Development</strong> as your model state
+              </li>
+              <li>
+                Select an annotation group. In this case
+                <strong>GO Central</strong> is selected
+
+                <div class="sae-alert sae-alert-info">
+                  Annotation groups are associated with curators in the users metadata file described above. By default, the first group associated
+                  with your entry in the metadata file is the group listed in the form. If you belong to multiple groups,
+                  you can select the appropriate group for your work from the drop-down list.
+                </div>
+              </li>
+            </ol>
+            <img [src]="course.images['model-def-1'].url" class="sae-figure" /> So far so good, let's
+            <a (click)="gotoNextStep()">
+              Enter gene product
+            </a>
+          </div>
+        </div>
+        <div class="course-step" fusePerfectScrollbar *ngIf="currentStepIndex === 2" [@slideIn]="animationDirection">
+          <div id="course-step-content" class="course-step-content">
+            <h2>Enter gene product </h2>
+
+            <p>Enter
+              <strong>ABCA1 Hsap </strong>
+            </p>
+            <p>By default, the form allows you to enter a single gene product. Start typing, choices will appear, and then select
+              the gene product.</p>
+            <img [src]="course.images['gp-1'].url" class="sae-figure" />
+
+            <p class="sae-alert sae-alert-info">
+              <strong>Tip:</strong> can type in the gene symbol, e.g. Wnt3a or the unique identifier or accession, e.g. UniProtKB:P56704.
+              If necessary to narrow down the choices, type a space after the symbol, and enter the three letter code for
+              the species (first letter from genus and two from species name, e.g. mmu for Mus musculus).&nbsp; Each entry
+              in the autocomplete will also show the associated unique database identifier or accession, so curators can
+              confirm that they are selecting the appropriate entity for annotation.</p>
+
+            <img [src]="course.images['gp-2'].url" class="sae-figure" />
+
+            <a (click)="gotoNextStep()">
+              Enter the molecular function
+            </a>
+          </div>
+        </div>
+        <div class="course-step" fusePerfectScrollbar *ngIf="currentStepIndex === 3" [@slideIn]="animationDirection">
+          <div id="course-step-content" class="course-step-content">
+
+            <h2>Enter the molecular function, evidence, and reference</h2>
+            <img [src]="course.images['fd-1'].url" class="sae-figure" />
+
+            <div class="sae-alert sae-alert-warning">
+              <strong>* Required Fields If: </strong>
+              <ul>
+                <li>
+                  you fill in the first field of any line, you need to add evidence and a reference.
+                </li>
+                <li>
+                  the Molecular Function is known, enter the appropriate GO term, evidence code and reference.
+                </li>
+                <li>
+                  the Molecular Function is unknown, but you are also making a Biological Process annotation, enter "molecular_function" and
+                  the same evidence and reference as the Biological Process annotation.
+                </li>
+                <li>
+                  the Molecular Function is unknown, and there is no evidence for what the Molecular Function might be, enter "molecular_function"
+                  and the ND evidence code.
+                </li>
+              </ul>
+              <img [src]="course.images['fd-1'].url" class="sae-figure" />
+              <a (click)="gotoNextStep()">
+                All Done
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-navigation">
+        <button mat-fab class="previous mat-accent white-fg" (click)="gotoPreviousStep()" [disabled]="currentStepIndex === 0" [fxHide]="currentStepIndex === 0">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+
+        <button mat-fab class="next mat-accent white-fg" (click)="gotoNextStep()" [disabled]="currentStepIndex === course.steps.length - 1"
+          [fxHide]="currentStepIndex === course.steps.length - 1">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+        <button mat-fab class="done mat-green-600-bg" routerLink="/apps/academy/courses" [disabled]="currentStepIndex !== course.steps.length - 1"
+          [fxShow]="currentStepIndex === course.steps.length - 1">
+          <mat-icon>check</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-sidenav-container>
 </div>

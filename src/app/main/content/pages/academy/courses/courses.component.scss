@@ -1,7 +1,5 @@
 @import "src/@fuse/scss/fuse";
-
 #academy-courses {
-
     .header {
         position: relative;
         flex: 1 0 auto;
@@ -10,14 +8,11 @@
         background: #1A237E;
         background: linear-gradient(to right, #0E2A3B 0%, #34306B 100%);
         text-align: center;
-
         @include media-breakpoint('xs') {
             height: 240px;
             padding: 16px;
         }
-
         .hero-text {
-
             .hero-icon {
                 position: absolute;
                 top: -64px;
@@ -27,7 +22,6 @@
                 width: 512px !important;
                 height: 512px !important;
             }
-
             h1 {
                 color: white;
                 font-size: 40px;
@@ -36,12 +30,10 @@
                 text-align: center;
                 margin-top: 0;
                 margin-bottom: 16px;
-
                 @include media-breakpoint-down('xs') {
                     font-size: 24px;
                 }
             }
-
             h3 {
                 color: rgba(255, 255, 255, 0.75);
                 max-width: 480px;
@@ -49,123 +41,96 @@
                 font-weight: 300;
                 letter-spacing: 0.03em;
                 margin: 0;
-
                 @include media-breakpoint-down('xs') {
                     font-size: 14px;
                 }
             }
         }
     }
-
     .content {
-
         .category-selector {
             min-width: 200px;
         }
-
         .filters {
             width: 100%;
             max-width: 1040px;
             margin: 24px auto;
             padding: 0 20px;
-
             @include media-breakpoint-down('xs') {
                 margin: 0 auto;
             }
-
             .course-search {
                 width: 200px;
-
                 @include media-breakpoint-down('xs') {
                     margin-bottom: 16px;
                 }
-
                 @include media-breakpoint-up('sm') {
                     margin-right: 16px;
                 }
             }
         }
-
         .courses {
             width: 100%;
             max-width: 1040px;
             margin: 0 auto;
-
             .no-courses {
                 font-size: 24px;
                 margin: 24px 0;
                 text-align: center;
             }
-
             .course {
                 padding: 16px;
-
                 &:hover {
-
                     .course-content {
                         @include mat-elevation(8);
                     }
                 }
-
                 .course-content {
                     background: white;
                     min-height: 240px;
                     transition: box-shadow 150ms ease-in-out;
-
                     @include mat-elevation(1);
-
                     .header {
                         color: white;
                         padding: 16px 24px;
                         height: 64px !important;
                         min-height: 64px !important;
                         max-height: 64px !important;
-
-                        &.web-bg {
+                        &.basic-bg {
                             background: mat-color($mat-blue, 500);
                         }
-
                         &.android-bg {
                             background: mat-color($mat-green, 500);
                         }
-
                         &.firebase-bg {
                             background: mat-color($mat-amber, 800);
                         }
-
                         &.cloud-bg {
                             background: mat-color($mat-blue-grey, 500);
                         }
-
                         .category {
                             text-transform: capitalize;
                             text-align: left;
                             font-weight: 500;
                             color: rgba(0, 0, 0, 0.54);
                         }
-
                         .length {
-
                             .length-icon {
                                 margin-right: 8px;
                                 color: rgba(0, 0, 0, 0.54) !important;
                             }
-
                             .min {
                                 font-size: 16px;
                                 color: rgba(0, 0, 0, 0.54);
                             }
                         }
                     }
-
                     .content {
                         padding: 24px;
-
                         .h1 {
                             font-size: 16px;
                             text-align: center;
                         }
-
                         .updated {
                             font-size: 13px;
                             font-weight: 500;
@@ -173,7 +138,6 @@
                             color: rgba(0, 0, 0, 0.37);
                         }
                     }
-
                     .footer {
                         padding: 16px;
                         height: 48px !important;

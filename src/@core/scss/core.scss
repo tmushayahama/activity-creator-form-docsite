@@ -36,6 +36,11 @@ $alertColorList: ( info: ( color: $sae-info, background-color: #d9edf7, border-c
         border-color: #bcdff1;
         color: #31708f;
     }
+    &.sae-alert-primary {
+        background-color: #d9edf7;
+        border-color: #929ae9;
+        color: #c3d1e0;
+    }
     &.sae-alert-success {
         background-color: #dff0d8;
         border-color: #d0e9c6;
@@ -59,6 +64,11 @@ h1 {
 
 h2 {
     font-size: 28px;
+}
+
+.sae-figure {
+    margin: 16px 10px;
+    @include mat-elevation(10);
 }
 
 .sae-truncate {
