@@ -9,88 +9,89 @@ $sae-danger: #bf5329;
 $alertColorList: ( info: ( color: $sae-info, background-color: #d9edf7, border-color: #bcdff1));
 //$sae-secondary-color: #995014;
 @mixin deep-width($number) {
-    width: $number;
-    min-width: $number;
-    max-width: $number;
+  width: $number;
+  min-width: $number;
+  max-width: $number;
 }
 
 @mixin deep-height($number) {
-    height: $number;
-    min-height: $number;
-    max-height: $number;
+  height: $number;
+  min-height: $number;
+  max-height: $number;
 }
 
 .sae-alert {
-    // @each $item,
-    // $color in $alertColorList {
-    //      &.sae-alert-#{$item} {
-    //           padding: 16px;
-    //           border: darken(map-get($color, border-color), 20%) solid 1px;
-    //           background-color: map-get($color, color);
-    //      }
-    //  } 
-    padding: 16px 14px;
-    border: 1px soild transparent;
-    &.sae-alert-info {
-        background-color: #d9edf7;
-        border-color: #bcdff1;
-        color: #31708f;
-    }
-    &.sae-alert-primary {
-        background-color: #d9edf7;
-        border-color: #929ae9;
-        color: #c3d1e0;
-    }
-    &.sae-alert-success {
-        background-color: #dff0d8;
-        border-color: #d0e9c6;
-        color: #3c763d;
-    }
-    &.sae-alert-warning {
-        background-color: #fcf8e3;
-        border-color: #faf2cc;
-        color: #8a6d3b;
-    }
-    &.sae-alert-danger {
-        background-color: #f2dede;
-        border-color: #ebcccc;
-        color: #a94442;
-    }
+  // @each $item,
+  // $color in $alertColorList {
+  //      &.sae-alert-#{$item} {
+  //           padding: 16px;
+  //           border: darken(map-get($color, border-color), 20%) solid 1px;
+  //           background-color: map-get($color, color);
+  //      }
+  //  } 
+  padding: 16px 14px;
+  border: 1px soild transparent;
+  &.sae-alert-info {
+    background-color: #d9edf7;
+    border-color: #bcdff1;
+    color: #31708f;
+  }
+  &.sae-alert-primary {
+    background-color: #d9edf7;
+    border-color: #929ae9;
+    color: #c3d1e0;
+  }
+  &.sae-alert-success {
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+    color: #3c763d;
+  }
+  &.sae-alert-warning {
+    background-color: #fcf8e3;
+    border-color: #faf2cc;
+    color: #8a6d3b;
+  }
+  &.sae-alert-danger {
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+  }
 }
 
 h1 {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 h2 {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .sae-figure {
-    margin: 16px 10px;
-    @include mat-elevation(10);
+  @include deep-width(100%);
+  margin: 16px 10px;
+  @include mat-elevation(6);
 }
 
 .sae-truncate {
-    display: block;
-    margin: 0;
-    white-space: nowrap;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  display: block;
+  margin: 0;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 textarea {
-    //resize: none;
+  //resize: none;
 }
 
 .sae-container {
-    position: relative;
-    width: 800px;
-    .sae-full-w {
-        width: 100% !important;
-    }
-    /*
+  position: relative;
+  width: 800px;
+  .sae-full-w {
+    width: 100% !important;
+  }
+  /*
     @include respond-to (sae-md) {
      width: 80%;
     }
@@ -101,65 +102,65 @@ textarea {
 }
 
 .sae-arrow-container {
+  .mat-button {
+    padding: 0;
+  }
+  &.sae-up-arrow,
+  &.sae-down-arrow {
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
     .mat-button {
-        padding: 0;
+      height: 30px;
+      min-height: 30px;
+      max-height: 30px;
+      line-height: 30px;
+      width: 80px;
+      min-width: 80px;
+      max-width: 80px;
     }
-    &.sae-up-arrow,
-    &.sae-down-arrow {
-        height: 40px;
-        min-height: 40px;
-        max-height: 40px;
-        .mat-button {
-            height: 30px;
-            min-height: 30px;
-            max-height: 30px;
-            line-height: 30px;
-            width: 80px;
-            min-width: 80px;
-            max-width: 80px;
-        }
-    }
-    &.sae-left-arrow,
-    &.sae-right-arrow {
-        width: 40px;
-        min-width: 30px;
-        max-width: 30px;
-        .mat-button {
-            width: 30px;
-            min-width: 30px;
-            max-width: 30px;
-            height: 100px;
-            min-height: 100px;
-            max-height: 100px;
-        }
-    }
+  }
+  &.sae-left-arrow,
+  &.sae-right-arrow {
+    width: 40px;
+    min-width: 30px;
+    max-width: 30px;
     .mat-button {
-        background-color: $sae-secondary-color;
-        &:hover {
-            background-color: rgba($sae-secondary-color, 0.5) !important;
-        }
-        &.sae-disabled {
-            background-color: #CCC;
-            pointer-events: none;
-            opacity: 0.2;
-        }
+      width: 30px;
+      min-width: 30px;
+      max-width: 30px;
+      height: 100px;
+      min-height: 100px;
+      max-height: 100px;
     }
+  }
+  .mat-button {
+    background-color: $sae-secondary-color;
+    &:hover {
+      background-color: rgba($sae-secondary-color, 0.5) !important;
+    }
+    &.sae-disabled {
+      background-color: #CCC;
+      pointer-events: none;
+      opacity: 0.2;
+    }
+  }
 }
 
 .sae-card-activity-1 {
-    width: 100%; // margin-right: -88px;
-    //padding-right: 66px;
-    .sae-image {
-        width: 96px;
-        padding: 10px 8px;
+  width: 100%; // margin-right: -88px;
+  //padding-right: 66px;
+  .sae-image {
+    width: 96px;
+    padding: 10px 8px;
+  }
+  .sae-info {
+    padding: 16px;
+    .sae-title {
+      font-size: 16px;
     }
-    .sae-info {
-        padding: 16px;
-        .sae-title {
-            font-size: 16px;
-        }
-        .sae-description {
-            font-size: 12px;
-        }
+    .sae-description {
+      font-size: 12px;
     }
+  }
 }

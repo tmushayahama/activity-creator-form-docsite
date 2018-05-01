@@ -52,11 +52,11 @@ export class AcademyFakeDb {
         },
         'gp-1': {
             label: 'Model',
-            url: 'assets/images/tutorials/basic/gp-2.png'
+            url: 'assets/images/tutorials/basic/gp-1.png'
         },
         'gpad-1': {
             label: 'Model',
-            url: 'assets/images/tutorials/basic/gpad-2.png'
+            url: 'assets/images/tutorials/basic/gpad-1.png'
         },
         'gp-2': {
             label: 'Model',

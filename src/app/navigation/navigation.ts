@@ -17,6 +17,12 @@ export const navigation = [
                 'type': 'item',
                 'icon': 'today',
                 'url': '/getting-started',
+            }, {
+                'id': 'faq',
+                'title': 'FAQs',
+                'type': 'item',
+                'icon': 'info',
+                'url': '/faq',
             }
         ]
     }, {
